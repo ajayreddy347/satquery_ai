@@ -1,0 +1,11 @@
+[
+  {
+    "id": "usr_81aac9e6a6d92b58d3dfd0aa",
+    "name": "Satellite Analyst",
+    "email": "analyst@satquery.ai",
+    "passwordHash": "be55eae90e3f3d8238914e49030beacb46a06931617a5d07b58f3def6e1e57926a69904164bbeffb50105734330386da7dcc5a7d83c98c529d24e848e157e6c5",
+    "salt": "d8af36456d589f808c29ebf4555018b6",
+    "createdAt": "2026-09-11T15:40:33.223Z",
+    "lastLoginAt": "2026-09-11T15:40:58.571Z"
+  }
+]

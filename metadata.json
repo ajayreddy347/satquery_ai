@@ -1,0 +1,6 @@
+{
+  "name": "SatQuery AI",
+  "description": "Understand your satellite imagery with AI — single image analysis, past and present change detection, and optical + SAR fusion.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

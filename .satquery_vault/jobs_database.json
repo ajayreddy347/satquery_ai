@@ -1,0 +1,290 @@
+[
+  {
+    "id": "sq-job-20260907-194200-a101",
+    "userId": "ajayreddy9164@gmail.com",
+    "createdAt": "2026-09-07T19:42:00.000Z",
+    "startedAt": "2026-09-07T19:42:01.000Z",
+    "completedAt": "2026-09-07T19:42:03.200Z",
+    "durationMs": 2200,
+    "status": "COMPLETED",
+    "progress": 100,
+    "currentStep": "COMPLETED: Intelligence Dossier Persisted",
+    "query": "Describe the land-cover and major objects visible in this image.",
+    "inputType": "single",
+    "inputSummary": "MUMBAI_HARBOR_MSI_20240315.tif (2048 × 2048 px)",
+    "uploadedFileIds": [
+      "file-seed-01"
+    ],
+    "uploadedFilesMetadata": [
+      {
+        "id": "file-seed-01",
+        "name": "MUMBAI_HARBOR_MSI_20240315.tif",
+        "size": "142.8 MB",
+        "crs": "EPSG:32643",
+        "gsd": "0.5m GSD",
+        "modality": "Optical Multispectral"
+      }
+    ],
+    "detectedModality": "Optical Multispectral (RGB + NIR)",
+    "selectedTask": "Scene Captioning",
+    "selectedModel": "RS-Captioner-v2.4 (Cross-Attention Remote Sensing Transformer)",
+    "response": {
+      "answer": "Dense coastal seaport complex featuring 6 deep-water container berths, 42 industrial logistics cranes, cargo staging bays, and intermodal transport corridors. Dominant land-cover: 58% built-up impervious marine infrastructure, 32% saline water bodies, 10% coastal vegetation.",
+      "whyThisAnswer": "Identified distinct container vessel hulls, quayside gantry crane shadows, and road arteries with consistent spectral profiles across optical RGB and NIR channels.",
+      "isSimulation": true
+    },
+    "confidence": 96.4,
+    "evidenceReferences": [
+      {
+        "id": "ev-01",
+        "type": "Bounding Box",
+        "label": "Primary Marine Logistics Basin",
+        "coordinates": "18.9615° N, 72.8375° E",
+        "confidence": 96.4
+      }
+    ],
+    "executionTrace": [
+      {
+        "id": "t-1",
+        "stepNumber": 1,
+        "title": "Input Ingestion & GeoTIFF Validation",
+        "status": "completed",
+        "durationMs": 120,
+        "summary": "EPSG:32643 valid"
+      },
+      {
+        "id": "t-2",
+        "stepNumber": 2,
+        "title": "Linguistic Intent & Task Classification",
+        "status": "completed",
+        "durationMs": 180,
+        "summary": "Scene Captioning matched"
+      },
+      {
+        "id": "t-3",
+        "stepNumber": 3,
+        "title": "Specialist Model Execution",
+        "status": "completed",
+        "durationMs": 1400,
+        "summary": "RS-Captioner-v2.4 inference"
+      },
+      {
+        "id": "t-4",
+        "stepNumber": 4,
+        "title": "Confidence Calibration & Provenance Audit",
+        "status": "completed",
+        "durationMs": 500,
+        "summary": "Calibrated score: 96.4%"
+      }
+    ],
+    "errorInfo": null,
+    "reportDossier": {
+      "dossierId": "dossier-sq-job-20260907-194200-a101",
+      "format": "SIH-GeoJSON-v2.4",
+      "generatedAt": "2026-09-07T19:42:04.000Z",
+      "reproducibleSeed": "seed-mumbai-2026"
+    }
+  },
+  {
+    "id": "sq-job-20260907-181500-b202",
+    "userId": "ajayreddy9164@gmail.com",
+    "createdAt": "2026-09-07T18:15:00.000Z",
+    "startedAt": "2026-09-07T18:15:01.000Z",
+    "completedAt": "2026-09-07T18:15:04.100Z",
+    "durationMs": 3100,
+    "status": "COMPLETED",
+    "progress": 100,
+    "currentStep": "COMPLETED: Bi-Temporal Change Map Generated",
+    "query": "What changed between these two dates, and where did the change occur?",
+    "inputType": "bi-temporal",
+    "inputSummary": "BENGALURU_T1_BASELINE.tif → BENGALURU_T2_MONITOR.tif",
+    "uploadedFileIds": [
+      "file-seed-02",
+      "file-seed-03"
+    ],
+    "uploadedFilesMetadata": [
+      {
+        "id": "file-seed-02",
+        "name": "BENGALURU_T1_BASELINE.tif",
+        "size": "138.2 MB",
+        "crs": "EPSG:32643"
+      },
+      {
+        "id": "file-seed-03",
+        "name": "BENGALURU_T2_MONITOR.tif",
+        "size": "141.5 MB",
+        "crs": "EPSG:32643"
+      }
+    ],
+    "detectedModality": "Co-Registered Bi-Temporal Optical Pairs",
+    "selectedTask": "Bi-Temporal Change Analysis",
+    "selectedModel": "ChangeFormer-V2 (Siamese Vision Transformer)",
+    "response": {
+      "answer": "Significant urban expansion detected: +2.85 km² (+32.4%) new commercial and residential built-up infrastructure replacing agricultural scrubland.",
+      "whyThisAnswer": "Siamese transformer temporal difference operator identified high NDBI increase and concurrent NDVI reduction in the eastern expansion sector.",
+      "isSimulation": true
+    },
+    "confidence": 95.3,
+    "evidenceReferences": [
+      {
+        "id": "ev-02",
+        "type": "Change Mask",
+        "label": "Urban Transition Zone Sector 4",
+        "coordinates": "12.9716° N, 77.5946° E",
+        "confidence": 95.3
+      }
+    ],
+    "executionTrace": [
+      {
+        "id": "t-1",
+        "stepNumber": 1,
+        "title": "Temporal Pair Co-Registration Check",
+        "status": "completed",
+        "durationMs": 250,
+        "summary": "RMSE: 0.18 px"
+      },
+      {
+        "id": "t-2",
+        "stepNumber": 2,
+        "title": "Siamese ViT Difference Encoding",
+        "status": "completed",
+        "durationMs": 2200,
+        "summary": "Multi-scale attention fused"
+      },
+      {
+        "id": "t-3",
+        "stepNumber": 3,
+        "title": "Change Metric Calculation",
+        "status": "completed",
+        "durationMs": 650,
+        "summary": "+2.85 km² net expansion"
+      }
+    ],
+    "errorInfo": null,
+    "reportDossier": {
+      "dossierId": "dossier-sq-job-20260907-181500-b202",
+      "format": "SIH-GeoJSON-v2.4",
+      "generatedAt": "2026-09-07T18:15:05.000Z",
+      "reproducibleSeed": "seed-bengaluru-2026"
+    }
+  },
+  {
+    "id": "sq-job-20260907-163000-c303",
+    "userId": "ajayreddy9164@gmail.com",
+    "createdAt": "2026-09-07T16:30:00.000Z",
+    "startedAt": "2026-09-07T16:30:01.000Z",
+    "completedAt": "2026-09-07T16:30:03.950Z",
+    "durationMs": 2950,
+    "status": "COMPLETED",
+    "progress": 100,
+    "currentStep": "COMPLETED: Multimodal Cross-Modal Report Generated",
+    "query": "Use the optical and SAR images together to identify built-up and water-covered regions.",
+    "inputType": "optical-sar",
+    "inputSummary": "MANGALORE_OPTICAL.tif + MANGALORE_SAR_RISAT1A.tif",
+    "uploadedFileIds": [
+      "file-seed-04",
+      "file-seed-05"
+    ],
+    "uploadedFilesMetadata": [
+      {
+        "id": "file-seed-04",
+        "name": "MANGALORE_OPTICAL.tif",
+        "size": "135.0 MB",
+        "crs": "EPSG:32643",
+        "modality": "Optical"
+      },
+      {
+        "id": "file-seed-05",
+        "name": "MANGALORE_SAR_RISAT1A.tif",
+        "size": "128.4 MB",
+        "crs": "EPSG:32643",
+        "modality": "SAR"
+      }
+    ],
+    "detectedModality": "Optical Multispectral + SAR Microwave Radar",
+    "selectedTask": "Optical-SAR Cross-Modal Analysis",
+    "selectedModel": "CrossSens-Fusion (Dual-Stream Cross-Attention Network)",
+    "response": {
+      "answer": "Optical and SAR cross-modal fusion clearly resolved 4.12 km² of high-density built-up structures and 8.45 km² of coastal estuaries. SAR backscatter penetration pierced thin cloud haze, while optical bands provided crisp spectral separation of vegetation.",
+      "whyThisAnswer": "Double-bounce radar reflections (VV/VH backscatter > -6 dB) unambiguously confirmed metallic rooflines and reinforced concrete structures unaffected by haze.",
+      "isSimulation": true
+    },
+    "confidence": 97.5,
+    "evidenceReferences": [
+      {
+        "id": "ev-03",
+        "type": "Multimodal Fusion Mask",
+        "label": "Haze-Piercing Industrial Zone",
+        "coordinates": "12.8700° N, 74.8800° E",
+        "confidence": 97.5
+      }
+    ],
+    "executionTrace": [
+      {
+        "id": "t-1",
+        "stepNumber": 1,
+        "title": "Sensor Alignment & Resolution Resampling",
+        "status": "completed",
+        "durationMs": 310,
+        "summary": "Matched 0.5m GSD"
+      },
+      {
+        "id": "t-2",
+        "stepNumber": 2,
+        "title": "Dual-Stream Feature Extraction",
+        "status": "completed",
+        "durationMs": 1800,
+        "summary": "Optical reflectance + SAR backscatter"
+      },
+      {
+        "id": "t-3",
+        "stepNumber": 3,
+        "title": "Cross-Attention Multimodal Synthesis",
+        "status": "completed",
+        "durationMs": 840,
+        "summary": "Haze compensation verified"
+      }
+    ],
+    "errorInfo": null,
+    "reportDossier": {
+      "dossierId": "dossier-sq-job-20260907-163000-c303",
+      "format": "SIH-GeoJSON-v2.4",
+      "generatedAt": "2026-09-07T16:30:05.000Z",
+      "reproducibleSeed": "seed-mangalore-2026"
+    }
+  },
+  {
+    "id": "sq-job-20260909140235-32d174",
+    "userId": "ajayreddy9164@gmail.com",
+    "createdAt": "2026-09-09T14:02:35.012Z",
+    "status": "QUEUED",
+    "progress": 5,
+    "currentStep": "QUEUED: Awaiting inference worker allocation",
+    "durationMs": 0,
+    "query": "Identify all floating solar panels in the reservoir",
+    "inputType": "single",
+    "inputSummary": "Satellite Remote Sensing Acquisition",
+    "uploadedFileIds": [],
+    "uploadedFilesMetadata": [],
+    "detectedModality": "Optical Multispectral (RGB + NIR)",
+    "selectedTask": "Single-Image VQA",
+    "selectedModel": "RS-VLM Dual-Encoder (Swin-L + RoBERTa-RS)",
+    "response": {
+      "answer": "",
+      "whyThisAnswer": "",
+      "isSimulation": true
+    },
+    "confidence": null,
+    "evidenceReferences": [],
+    "executionTrace": [
+      {
+        "id": "trace-1",
+        "stepNumber": 1,
+        "title": "Input Ingestion & GeoTIFF Validation",
+        "status": "pending",
+        "summary": "Awaiting job pickup by worker."
+      }
+    ],
+    "errorInfo": null
+  }
+]
